@@ -1,0 +1,13 @@
+.parallax-effect {  
+    display: flex;  
+    flex-direction: column;  
+    justify-content: center;  
+    align-items: center;  
+    width: 150px;  
+    height: 150px;  
+    background: linear-gradient(89deg, #764A5D 0%, #38A9C2 100%);  
+    color: white;  
+    border: 2px solid black; 
+    border-radius: 20px;  
+    transform-style: preserve-3d;  
+}
