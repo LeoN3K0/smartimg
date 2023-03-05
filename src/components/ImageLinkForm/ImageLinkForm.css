@@ -1,9 +1,39 @@
 .form{
     width: 700px;
-    background-color:#764A5D;
-    background-image:
-    radial-gradient(#38A9C2 9px, transparent 10px),
-    repeating-radial-gradient(#38A9C2 0, #38A9C2 4px, transparent 5px, transparent 20px, #38A9C2 21px, #38A9C2 25px, transparent 26px, transparent 50px);
-    background-size: 30px 30px, 90px 90px;
-    background-position: 0 0;
+    background:
+    linear-gradient(135deg, #001510 21px, #00bf8f 22px, #00bf8f 24px, transparent 24px, transparent 67px, #00bf8f 67px, #00bf8f 69px, transparent 69px),
+    linear-gradient(225deg, #001510 21px, #00bf8f 22px, #00bf8f 24px, transparent 24px, transparent 67px, #00bf8f 67px, #00bf8f 69px, transparent 69px)0 64px;
+    background-color:#001510;
+    background-size: 64px 128px;
+}
+
+@keyframes background-pan {
+    from {
+        background-position: 0% center;
+    }
+    to {
+        background-position: -200% center;
+    }
+}
+
+p {
+    color: wheat;
+    margin: 0px;
+    padding: 20px;
+    text-align: center;
+}
+
+p > .magic-text {
+    animation: background-pan 3s linear infinite;
+    background:  linear-gradient(
+        to right,
+        Blue, 
+        rgb(60, 146, 231),
+        rgb(97, 247, 245), 
+        blue
+    );
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
 }
