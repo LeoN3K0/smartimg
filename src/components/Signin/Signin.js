@@ -18,7 +18,7 @@ class Signin extends React.Component {
   }
 
   onSubmitSignIn = () => {
-    fetch('http://localhost:3000/signin', {
+    fetch('https://smartimg-backend.onrender.com/signin', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -26,13 +26,21 @@ class Signin extends React.Component {
         password: this.state.signInPassword
       })
     })
-      .then(response => response.json())
+      .then(response => {
+        if (response.status >= 400) {
+          throw new Error("Server responds with error!")
+        }
+        return response.json();
+      })
       .then(user => {
         if (user.id) {
-          this.props.loadUser(user)
+          this.props.loadUser(user);
           this.props.onRouteChange('home');
         }
-      })
+      },
+      err => {
+        console.log(err)
+    })
   }
 
   render() {
